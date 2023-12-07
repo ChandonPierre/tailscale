@@ -60,6 +60,9 @@ var (
 	//
 	//lint:ignore U1000 used on Linux/Darwin only
 	debugPMTUD = envknob.RegisterBool("TS_DEBUG_PMTUD")
+	// debugEnableProbeUDPLifetime enables UDP path lifetime probing in
+	// magicsock.
+	debugEnableProbeUDPLifetime = envknob.RegisterBool("TS_DEBUG_ENABLE_PROBE_UDP_LIFETIME")
 	// Hey you! Adding a new debugknob? Make sure to stub it out in the
 	// debugknobs_stubs.go file too.
 )

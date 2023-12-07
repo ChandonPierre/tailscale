@@ -2195,6 +2195,10 @@ const (
 	// NodeAttrSeamlessKeyRenewal makes clients enable beta functionality
 	// of renewing node keys without breaking connections.
 	NodeAttrSeamlessKeyRenewal NodeCapability = "seamless-key-renewal"
+
+	// NodeAttrProbeUDPLifetime makes the client probe UDP path lifetime at the
+	// tail end of an active direct connection in magicsock.
+	NodeAttrProbeUDPLifetime NodeCapability = "probe-udp-lifetime"
 )
 
 // SetDNSRequest is a request to add a DNS record.
