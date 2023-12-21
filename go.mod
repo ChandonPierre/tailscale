@@ -22,6 +22,7 @@ require (
 	github.com/dave/patsy v0.0.0-20210517141501-957256f50cba
 	github.com/dblohm7/wingoes v0.0.0-20230929194252-e994401fc077
 	github.com/digitalocean/go-smbios v0.0.0-20180907143718-390a4f403a8e
+	github.com/djherbis/times v1.6.0
 	github.com/dsnet/try v0.0.3
 	github.com/evanw/esbuild v0.19.4
 	github.com/frankban/quicktest v1.14.5
@@ -41,6 +42,7 @@ require (
 	github.com/iancoleman/strcase v0.3.0
 	github.com/illarion/gonotify v1.0.1
 	github.com/insomniacslk/dhcp v0.0.0-20230908212754-65c27093e38a
+	github.com/jellydator/ttlcache/v3 v3.1.0
 	github.com/josharian/native v1.1.1-0.20230202152459-5c7d0dd6ab86
 	github.com/jsimonetti/rtnetlink v1.3.5
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
@@ -65,11 +67,13 @@ require (
 	github.com/tailscale/goexpect v0.0.0-20210902213824-6e8c725cea41
 	github.com/tailscale/golang-x-crypto v0.0.0-20230713185742-f0b76a10a08e
 	github.com/tailscale/goupnp v1.0.1-0.20210804011211-c64d0f06ea05
+	github.com/tailscale/gowebdav v0.0.0-20240116221907-777851d01ec0
 	github.com/tailscale/hujson v0.0.0-20221223112325-20486734a56a
 	github.com/tailscale/mkctr v0.0.0-20220601142259-c0b937af2e89
 	github.com/tailscale/netlink v1.1.1-0.20211101221916-cabfb018fe85
 	github.com/tailscale/web-client-prebuilt v0.0.0-20231213172531-a4fa669015b2
 	github.com/tailscale/wireguard-go v0.0.0-20231121184858-cc193a0b3272
+	github.com/tailscale/xnet v0.0.0-20240103154817-cf0df690929f
 	github.com/tc-hib/winres v0.2.1
 	github.com/tcnksm/go-httpstat v0.2.0
 	github.com/toqueteos/webbrowser v1.2.0
@@ -79,14 +83,14 @@ require (
 	go.uber.org/zap v1.26.0
 	go4.org/mem v0.0.0-20220726221520-4f986261bf13
 	go4.org/netipx v0.0.0-20230824141953-6213f710f925
-	golang.org/x/crypto v0.15.0
+	golang.org/x/crypto v0.16.0
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9
 	golang.org/x/mod v0.14.0
-	golang.org/x/net v0.18.0
+	golang.org/x/net v0.19.0
 	golang.org/x/oauth2 v0.12.0
 	golang.org/x/sync v0.5.0
 	golang.org/x/sys v0.15.0
-	golang.org/x/term v0.14.0
+	golang.org/x/term v0.15.0
 	golang.org/x/time v0.3.0
 	golang.org/x/tools v0.15.0
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2
