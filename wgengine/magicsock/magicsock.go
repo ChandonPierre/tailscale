@@ -1318,7 +1318,14 @@ func (c *Conn) sendDiscoMessage(dst netip.AddrPort, dstKey key.NodePublic, dstDi
 		// Can't send. (e.g. no IPv6 locally)
 	} else {
 		if !c.networkDown() {
-			c.logf("magicsock: disco: failed to send %v to %v: %v", disco.MessageSummary(m), dst, err)
+			if isPMTUError(err) {
+				metricSentDiscoPeerMTUErrors.Add(1)
+				if debugPMTUD() {
+					c.logf("magicsock: disco: failed to send to %v, PMTU error %v", dst, err)
+				}
+			} else {
+				c.logf("magicsock: disco: failed to send %v to %v: %v", disco.MessageSummary(m), dst, err)
+			}
 		}
 	}
 	return sent, err
@@ -2917,6 +2924,7 @@ var (
 	metricSentDiscoPeerMTUProbes     = clientmetric.NewCounter("magicsock_disco_sent_peer_mtu_probes")
 	metricSentDiscoPeerMTUProbeBytes = clientmetric.NewCounter("magicsock_disco_sent_peer_mtu_probe_bytes")
 	metricSentDiscoCallMeMaybe       = clientmetric.NewCounter("magicsock_disco_sent_callmemaybe")
+	metricSentDiscoPeerMTUErrors     = clientmetric.NewCounter("magicsock_disco_sent_ping_peer_mtu_errors")
 	metricRecvDiscoBadPeer           = clientmetric.NewCounter("magicsock_disco_recv_bad_peer")
 	metricRecvDiscoBadKey            = clientmetric.NewCounter("magicsock_disco_recv_bad_key")
 	metricRecvDiscoBadParse          = clientmetric.NewCounter("magicsock_disco_recv_bad_parse")

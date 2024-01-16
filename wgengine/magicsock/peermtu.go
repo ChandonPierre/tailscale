@@ -5,7 +5,12 @@
 
 package magicsock
 
-import "tailscale.com/net/tstun"
+import (
+	"errors"
+
+	"golang.org/x/sys/unix"
+	"tailscale.com/net/tstun"
+)
 
 // Peer path MTU routines shared by platforms that implement it.
 
@@ -109,4 +114,8 @@ func (c *Conn) UpdatePMTUD() {
 	}
 	c.peerMTUEnabled.Store(newStatus)
 	c.resetEndpointStates()
+}
+
+func isPMTUError(err error) bool {
+	return errors.Is(err, unix.EMSGSIZE)
 }

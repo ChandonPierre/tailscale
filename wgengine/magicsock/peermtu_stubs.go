@@ -19,3 +19,7 @@ func (c *Conn) PeerMTUEnabled() bool {
 
 func (c *Conn) UpdatePMTUD() {
 }
+
+func isPMTUError(err error) bool {
+	return false
+}
